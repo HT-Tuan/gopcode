@@ -1,4 +1,3 @@
-I will need:
-`*` Snakes
-`*` Scorpions
-`*` Hamsters
+ * 1
+* 2
+* 3
