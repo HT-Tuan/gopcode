@@ -1,0 +1,30 @@
+  <!DOCTYPE hibernate-configuration SYSTEM
+    "classpath://org/hibernate/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>     
+    <session-factory>      
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://databasedemo.conzwsz377hq.us-east-1.rds.amazonaws.com:5432/dbdemo</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">Thanhtuan123456</property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">10</property>
+        
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        
+        <!--mapping-->
+        <mapping class="com.DayDream.model.entity.Account" />
+        <mapping class="com.DayDream.model.entity.Cart" />
+        <mapping class="com.DayDream.model.entity.Customer" />
+        <mapping class="com.DayDream.model.entity.DetailInvoice" />
+        <mapping class="com.DayDream.model.entity.Invoice" />
+        <mapping class="com.DayDream.model.entity.Product" />
+        <mapping class="com.DayDream.model.entity.Category" />
+                      
+    </session-factory> 
+</hibernate-configuration>
