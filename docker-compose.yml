@@ -1,0 +1,36 @@
+version: '3.4'
+
+#NETWORK
+networks:
+  springboot-app-network:
+    driver: bridge
+
+#SERVICES
+services:
+  # Backend
+  java-springboot:
+    container_name: apijava
+    build: 
+      dockerfile: Dockerfile
+      context: ./API-Back-end-Final-Project-EC/
+    ports:
+      -  "8090:8090"
+    volumes:
+      - ./API-Back-end-Final-Project-EC:/app
+    networks:
+      - springboot-app-network
+
+  #Frontend
+  reactjs:
+    container_name: web
+    build:
+      dockerfile: Dockerfile
+      context: ./FrontEnd
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./FrontEnd:/app
+      - /app/node_modules
+    networks:
+      - springboot-app-network
+
