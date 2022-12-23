@@ -7,6 +7,20 @@ networks:
 
 #SERVICES
 services:
+  #DB
+  SQLSERVER:
+    container_name: DB-SQLSERVER
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      -  "1439:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password789
+    volumes:
+      - ./vmssql:/var/lib/mssqlql/data
+    networks:
+      - springboot-app-network
+
   # Backend
   java-springboot:
     container_name: apijava
