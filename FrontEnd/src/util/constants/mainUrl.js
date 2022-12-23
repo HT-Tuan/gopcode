@@ -1,4 +1,4 @@
-export const mainDomain = 'http://localhost:8090'
+export const mainDomain = 'http://34.229.10.169:8090'
 
 //////////////////////////////////////////////
 export const categoryUrl = () => {
